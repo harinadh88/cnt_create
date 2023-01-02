@@ -1,0 +1,43 @@
+<html>
+
+
+        <head>
+
+                <script>
+                            let name = document.getElement
+
+                        function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("d1").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "http://3.110.42.194:46462/createimage?cntname=os10&imgname=ubuntu", true);
+  xhttp.send();
+}
+
+
+
+                </script>
+        </head>
+    <body>
+
+
+            <form action = "/create">
+                    enter name : <input name = 'n1' />
+               <input type= "Submit " />
+
+
+                <label for="cars">Choose a car:</label>
+
+   <select name="cmdinp" id="cmdinp">
+     <option value="date">to print the date</option>
+     <option value="docker ps -a ">no of images</option>
+     <option value="echo  'harinadh' ">echo command</option>
+     <option value="ls">ls</option>
+   </select>
+
+   <button   onclick = 'loadDoc()'>clickme</button>
+  </form>
+   <div style= "border :3px double blue" id = 'd1'>  div to print</div>
+     </body>
+        </html>
