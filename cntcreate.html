@@ -1,0 +1,52 @@
+<script>
+
+function hari() {
+        var name = document.getElementById( "containername").value;
+        var name2 =document.getElementById("imagename").value;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+     document.getElementById("d1").innerHTML = this.responseText;
+
+  }
+  xhttp.open("GET", "http://43.204.232.212:46462/createimage?cntname="+name+"&imgname="+name2, true);
+  xhttp.send();
+}
+
+function show()
+{
+
+  var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+         {
+
+                document.getElementById("div2").innerHTML= this.responseText;
+         }
+          xhttp.open("GET" ,"http://43.204.232.212:46462/ps" , true );
+          xhttp.send();
+
+
+}
+
+
+ </script>
+
+
+
+<form action = "/createimage" method = "GET">
+givecnt name:<input name= 'cntname' id = 'containername' />
+select image name:
+<select  name = 'imgname' id = "imagename">
+ <option value="centos">centos</option>
+  <option value="ubuntu">ubuntu</option>
+</select>
+
+</form>
+<button onclick= "hari()" >clickme</button>
+<div id = 'd1' style="border : 3px double red ; height :300px;    width :70%; " > this is div 1</div>
+
+
+<br /><br />
+show all images :
+<button onclick = "show()">show all images</button>
+<div id = 'div2' style="border : 3px solid blue ; " > this is div 2</div>
